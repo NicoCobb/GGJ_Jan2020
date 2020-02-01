@@ -32,8 +32,6 @@ public class Player : MonoBehaviour {
 	bool wallSliding;
 	int wallDirX;
 
-    //reachDetection reachBox;
-
 	void Start() {
 		controller = GetComponent<Controller2D> ();
 
@@ -44,10 +42,9 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		CalculateVelocity ();
-        HandleWallClip();
-        // HandleWallSliding ();
+        HandleWallClip ();
 
-        controller.Move (velocity * Time.deltaTime, directionalInput);
+		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
@@ -95,10 +92,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-    void HandleWallClip() {
+    void HandleWallClip()
+    {
         wallDirX = (controller.collisions.left) ? -1 : 1;
 
-        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below) {
+        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below)
+        {
             velocity.y = 0;
         }
     }
@@ -138,4 +137,10 @@ public class Player : MonoBehaviour {
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 	}
+
+	public void SetVelocity(Vector2 vec) {
+		velocity.x = vec.x;
+		velocity.y = vec.y;
+	}
+>>>>>>> 5df656f739796695b952778fa47a5d37f6826234
 }
