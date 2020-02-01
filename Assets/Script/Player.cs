@@ -32,6 +32,8 @@ public class Player : MonoBehaviour {
 	bool wallSliding;
 	int wallDirX;
 
+    //reachDetection reachBox;
+
 	void Start() {
 		controller = GetComponent<Controller2D> ();
 
@@ -42,9 +44,10 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		CalculateVelocity ();
-		HandleWallSliding ();
+        HandleWallClip();
+        // HandleWallSliding ();
 
-		controller.Move (velocity * Time.deltaTime, directionalInput);
+        controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
@@ -91,9 +94,17 @@ public class Player : MonoBehaviour {
 			velocity.y = minJumpVelocity;
 		}
 	}
-		
 
-	void HandleWallSliding() {
+    void HandleWallClip() {
+        wallDirX = (controller.collisions.left) ? -1 : 1;
+
+        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below) {
+            velocity.y = 0;
+        }
+    }
+
+
+    void HandleWallSliding() {
 		wallDirX = (controller.collisions.left) ? -1 : 1;
 		wallSliding = false;
 		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
