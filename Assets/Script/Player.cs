@@ -142,5 +142,4 @@ public class Player : MonoBehaviour {
 		velocity.x = vec.x;
 		velocity.y = vec.y;
 	}
->>>>>>> 5df656f739796695b952778fa47a5d37f6826234
 }
