@@ -49,9 +49,19 @@ public class RaycastController : MonoBehaviour {
 		
 		horizontalRayCount = Mathf.RoundToInt (boundsHeight / dstBetweenRays);
 		verticalRayCount = Mathf.RoundToInt (boundsWidth / dstBetweenRays);
-		
-		horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
-		verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
+        if (horizontalRayCount <= 1) {
+            horizontalRayCount = 1;
+            horizontalRaySpacing = 0;
+        } else {
+            horizontalRaySpacing = bounds.size.y / (horizontalRayCount - 1);
+        }
+
+        if (verticalRayCount <= 1) {
+            verticalRayCount = 1;
+            verticalRaySpacing = 0;
+        } else {
+            verticalRaySpacing = bounds.size.x / (verticalRayCount - 1);
+        }
 	}
 	
 	public struct RaycastOrigins {

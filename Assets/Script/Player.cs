@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		CalculateVelocity ();
-		HandleWallSliding ();
+        HandleWallClip ();
 
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
@@ -91,9 +91,19 @@ public class Player : MonoBehaviour {
 			velocity.y = minJumpVelocity;
 		}
 	}
-		
 
-	void HandleWallSliding() {
+    void HandleWallClip()
+    {
+        wallDirX = (controller.collisions.left) ? -1 : 1;
+
+        if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below)
+        {
+            velocity.y = 0;
+        }
+    }
+
+
+    void HandleWallSliding() {
 		wallDirX = (controller.collisions.left) ? -1 : 1;
 		wallSliding = false;
 		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
@@ -127,4 +137,10 @@ public class Player : MonoBehaviour {
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 	}
+
+	public void SetVelocity(Vector2 vec) {
+		velocity.x = vec.x;
+		velocity.y = vec.y;
+	}
+>>>>>>> 5df656f739796695b952778fa47a5d37f6826234
 }
