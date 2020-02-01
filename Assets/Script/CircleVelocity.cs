@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent (typeof (Controller2D))]
-public class Player : MonoBehaviour {
+[RequireComponent (typeof (CircleMoveable2D))]
+public class CircleVelocity : MonoBehaviour {
 
 	public float maxJumpHeight = 4;
 	public float minJumpHeight = 1;
@@ -26,14 +26,14 @@ public class Player : MonoBehaviour {
 	[HideInInspector]
 	public Vector3 velocity;
 	float velocityXSmoothing;
-	Controller2D controller;
+	CircleMoveable2D controller;
 
 	Vector2 directionalInput;
 	bool wallSliding;
 	int wallDirX;
 
 	void Start() {
-		controller = GetComponent<Controller2D> ();
+		controller = GetComponent<CircleMoveable2D> ();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -42,9 +42,9 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		CalculateVelocity ();
-		HandleWallSliding ();
+		//HandleWallSliding ();
 
-		controller.Move (velocity * Time.deltaTime, directionalInput);
+		controller.Move (velocity * Time.deltaTime);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
@@ -93,43 +93,9 @@ public class Player : MonoBehaviour {
 	}
 		
 
-	void HandleWallSliding() {
-		wallDirX = (controller.collisions.left) ? -1 : 1;
-		wallSliding = false;
-		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
-			wallSliding = true;
-
-			if (velocity.y < -wallSlideSpeedMax) {
-				velocity.y = -wallSlideSpeedMax;
-			}
-
-			if (timeToWallUnstick > 0) {
-				velocityXSmoothing = 0;
-				velocity.x = 0;
-
-				if (directionalInput.x != wallDirX && directionalInput.x != 0) {
-					timeToWallUnstick -= Time.deltaTime;
-				}
-				else {
-					timeToWallUnstick = wallStickTime;
-				}
-			}
-			else {
-				timeToWallUnstick = wallStickTime;
-			}
-
-		}
-
-	}
-
 	void CalculateVelocity() {
 		float targetVelocityX = directionalInput.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
-		velocity.y += gravity * Time.deltaTime;
-	}
-
-	public void SetVelocity(Vector2 vec) {
-		velocity.x = vec.x;
-		velocity.y = vec.y;
+		//velocity.y += gravity * Time.deltaTime;
 	}
 }
