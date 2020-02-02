@@ -12,11 +12,18 @@ public class Controller2D : RaycastController {
 	public LayerMask pushMask;
 
 	SpriteRenderer sp;
+	Animator animator;
+	const int IDLE = 0;
+	const int WALK = 1;
+	const int JUMP = 2;
+	const int LAND = 3;
+	int _currentAnimationState = IDLE;
 
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
 		sp = GetComponentInChildren<SpriteRenderer>();
+		animator = this.GetComponent<Animator>();
 	}
 	public void Move(Vector2 moveAmount) {
 		Move (moveAmount, false);
