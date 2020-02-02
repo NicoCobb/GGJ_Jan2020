@@ -13,12 +13,16 @@ public class PlayerInput : MonoBehaviour {
 
 	void Update () {
 		Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		Vector2 mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
 		player.SetDirectionalInput (directionalInput);
 
 
 		if (!allowJump) {
 			return;
 		}
+
+		if(Input.)
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
 		}
