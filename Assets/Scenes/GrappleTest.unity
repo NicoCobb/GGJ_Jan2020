@@ -430,7 +430,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 50
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -578,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 526449646788829291, guid: d56e12acfe4eb014cae166235d8a18ba,
         type: 3}
       propertyPath: grappleShotSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 526449646788829291, guid: d56e12acfe4eb014cae166235d8a18ba,
         type: 3}
