@@ -41,8 +41,8 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
-		CalculateVelocity ();
-        HandleWallClip ();
+		CalculateVelocity();
+        HandleWallClip();
 
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
@@ -132,7 +132,7 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void CalculateVelocity() {
+    void CalculateVelocity() {
 		float targetVelocityX = directionalInput.x * moveSpeed;
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
@@ -142,4 +142,13 @@ public class Player : MonoBehaviour {
 		velocity.x = vec.x;
 		velocity.y = vec.y;
 	}
+
+    void OnTriggerEnter(Collider col) {
+        print("test");
+        print(col.ToString());
+        if (col.bounds.Intersects(controller.collider.bounds)) {
+            velocity.y *= -3;
+            velocity.x *= -3;
+        }
+    }
 }
