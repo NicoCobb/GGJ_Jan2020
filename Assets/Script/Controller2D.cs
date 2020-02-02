@@ -11,10 +11,12 @@ public class Controller2D : RaycastController {
 
 	public LayerMask pushMask;
 
+	SpriteRenderer sp;
+
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
-
+		sp = GetComponentInChildren<SpriteRenderer>();
 	}
 	public void Move(Vector2 moveAmount) {
 		Move (moveAmount, false);
@@ -37,6 +39,15 @@ public class Controller2D : RaycastController {
 
 		if (moveAmount.x != 0) {
 			collisions.faceDir = (int)Mathf.Sign(moveAmount.x);
+			//insert flip
+			if(collisions.faceDir == 1)
+            {
+				sp.flipX = false;
+            } else
+            {
+				sp.flipX = true;
+            }
+			
 		}
 
 		HorizontalCollisions (ref moveAmount);
