@@ -147,12 +147,8 @@ public class Player : MonoBehaviour {
 	}
 
     public void ShootGrapple(Vector2 mousePos) {
-
-        Vector2 toClickLocation = mousePos - (Vector2)transform.position;
-        toClickLocation.Normalize();
-
         Instantiate(GrapplePrefab, transform.position, Quaternion.identity)
-        .GetComponent<GrapplingHook>().AimTongue(toClickLocation, this, grappleShotSpeed);
+        .GetComponent<GrapplingHook>().AimTongue(mousePos, this, grappleShotSpeed);
     }
 
 	public void SetVelocity(Vector2 vec) {

@@ -7,7 +7,7 @@ public class GrapplingHook : MonoBehaviour
     //palyer reference
     Player p;
     float grappleShotVelocity;
-    Vector2 mouseClickLoc;
+    Vector2 mouseClickDir;
 
     LineRenderer lr;
 
@@ -19,17 +19,21 @@ public class GrapplingHook : MonoBehaviour
 
 
     public void AimTongue(Vector2 mouseClick, Player pl, float shootVel) {
-        mouseClickLoc = mouseClick;
+
+        mouseClickDir = mouseClick;
         p = pl;
         grappleShotVelocity = shootVel;
+
+        Vector2 toClickLocation = mouseClick - (Vector2)p.transform.position;
+        toClickLocation.Normalize();
+
     }
     // Update is called once per frame
     void Update()
     {
-        //move the actual tongue tip
-        transform.position += new Vector3(2,2,0);
-
+        
         //also collision stuff
+        transform.position += (Vector3)mouseClickDir*grappleShotVelocity;
 
        lr.positionCount = 2;
        //set start point to player transform origin
