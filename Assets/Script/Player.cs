@@ -45,12 +45,20 @@ public class Player : MonoBehaviour {
 
 	Vector2 currentGrappleDir;
 
+	SpriteRenderer sp;
+	//public Sprite idle;
+	//public Sprite grapple;
+
 	void Start() {
 		controller = GetComponent<Controller2D> ();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
+
+		sp = GetComponentInChildren<SpriteRenderer>();
+		//idle = Art.Load("idle1", typeof(Sprite)) as Sprite;
+		// i still dont understand sprite animation or how to change sprites :( 
 	}
 
 	void Update() {
@@ -197,12 +205,14 @@ public class Player : MonoBehaviour {
     public void ShootGrapple(Vector2 mousePos) {
         grappleInstance = (GameObject) Instantiate(GrapplePrefab, transform.position, Quaternion.identity);
         grappleInstance.GetComponent<GrapplingHook>().AimTongue(mousePos, this, grappleShotSpeed);
+		//this.GetComponent<SpriteRenderer>().sprite = grapple;
     }
 	
 	public void EndGrapple() {
 		Destroy(grappleInstance);
 		isSwinging = false;
 		initSwing = true;
+		//this.GetComponent<SpriteRenderer>().sprite = idle;
 	}
 
 	public void SetVelocity(Vector2 vec) {
