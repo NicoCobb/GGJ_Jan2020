@@ -1,7 +1,61 @@
 fileFormatVersion: 2
 guid: 4efcb20f3b0edf143bb81f23ac75efb5
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1815566721189505708
+    second: checkpoint_flag_false
+  - first:
+      213: -7074720565169646727
+    second: checkpoint_flag_true
+  - first:
+      213: -5160107694635856705
+    second: checkpoint_flag_2
+  - first:
+      213: 3559094761681367312
+    second: checkpoint_flag_3
+  - first:
+      213: 6903510663521387628
+    second: checkpoint_flag_4
+  - first:
+      213: -4237990951117338559
+    second: checkpoint_flag_5
+  - first:
+      213: -1245343206577951822
+    second: checkpoint_flag_6
+  - first:
+      213: 4528557487316796847
+    second: checkpoint_flag_7
+  - first:
+      213: 289702950716970205
+    second: checkpoint_flag_8
+  - first:
+      213: -2462887822763279351
+    second: checkpoint_flag_9
+  - first:
+      213: 5591472782970032650
+    second: checkpoint_flag_10
+  - first:
+      213: -3547599453183831609
+    second: checkpoint_flag_11
+  - first:
+      213: -1624805509119748217
+    second: checkpoint_flag_12
+  - first:
+      213: 6506519965889916635
+    second: checkpoint_flag_13
+  - first:
+      213: 8696399753952869977
+    second: checkpoint_flag_14
+  - first:
+      213: -8103899866227322936
+    second: checkpoint_flag_15
+  - first:
+      213: -5192066991509575767
+    second: checkpoint_flag_16
+  - first:
+      213: 2206529472350146220
+    second: checkpoint_flag_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +94,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +124,75 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: checkpoint_flag_false
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 540
+        width: 240
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa658a4050323910800000000000000
+      internalID: 1815566721189505708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: checkpoint_flag_true
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 60
+        width: 240
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97399e3212b81dd90800000000000000
+      internalID: -7074720565169646727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

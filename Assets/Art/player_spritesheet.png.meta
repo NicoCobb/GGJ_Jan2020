@@ -1,7 +1,271 @@
 fileFormatVersion: 2
 guid: 008de575f324e0f4c9a93bc34322b55e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1768599190028779529
+    second: idle1
+  - first:
+      213: 307022013455192112
+    second: squat
+  - first:
+      213: 4154667061567573633
+    second: jump
+  - first:
+      213: 8303614701356616397
+    second: idle2
+  - first:
+      213: 846995674658977086
+    second: look_down
+  - first:
+      213: 3983628370140805306
+    second: grapple
+  - first:
+      213: 4662575081284223561
+    second: tongue
+  - first:
+      213: -1821490018188876489
+    second: player_spritesheet_7
+  - first:
+      213: 8878104818096140380
+    second: player_spritesheet_8
+  - first:
+      213: 2069299784110562224
+    second: player_spritesheet_9
+  - first:
+      213: 7379056272744279750
+    second: player_spritesheet_10
+  - first:
+      213: -4733107876001714546
+    second: player_spritesheet_11
+  - first:
+      213: 6357987398303972172
+    second: player_spritesheet_12
+  - first:
+      213: -5744367496703862250
+    second: player_spritesheet_13
+  - first:
+      213: -5099409022197164988
+    second: player_spritesheet_14
+  - first:
+      213: 1732394558219980742
+    second: player_spritesheet_15
+  - first:
+      213: -618497343692062617
+    second: player_spritesheet_16
+  - first:
+      213: -7479712701442903340
+    second: player_spritesheet_17
+  - first:
+      213: -552275036297810904
+    second: player_spritesheet_18
+  - first:
+      213: 8513470002250630101
+    second: player_spritesheet_19
+  - first:
+      213: -8527270959738819744
+    second: player_spritesheet_20
+  - first:
+      213: 2302571707625195621
+    second: player_spritesheet_21
+  - first:
+      213: -7694685484330206293
+    second: player_spritesheet_22
+  - first:
+      213: 5804641417511472054
+    second: player_spritesheet_23
+  - first:
+      213: 2526729963560337831
+    second: player_spritesheet_24
+  - first:
+      213: 7873330282310464390
+    second: player_spritesheet_25
+  - first:
+      213: 9086465580247764923
+    second: player_spritesheet_26
+  - first:
+      213: -4056151033610517834
+    second: player_spritesheet_27
+  - first:
+      213: -3675716017021669349
+    second: player_spritesheet_28
+  - first:
+      213: 131772632910148374
+    second: player_spritesheet_29
+  - first:
+      213: -4399316461161548224
+    second: player_spritesheet_30
+  - first:
+      213: -4489373769524847968
+    second: player_spritesheet_31
+  - first:
+      213: 4069114581748793080
+    second: player_spritesheet_32
+  - first:
+      213: 37495496905173266
+    second: player_spritesheet_33
+  - first:
+      213: 7580144973102847764
+    second: player_spritesheet_34
+  - first:
+      213: 2869985366184165854
+    second: player_spritesheet_35
+  - first:
+      213: 5350713240591691194
+    second: player_spritesheet_36
+  - first:
+      213: -5892684615515387758
+    second: player_spritesheet_37
+  - first:
+      213: 271153299356080127
+    second: player_spritesheet_38
+  - first:
+      213: -559438704252163295
+    second: player_spritesheet_39
+  - first:
+      213: 20918232669307090
+    second: player_spritesheet_40
+  - first:
+      213: 7578100014136844187
+    second: player_spritesheet_41
+  - first:
+      213: -5589001253521706397
+    second: player_spritesheet_42
+  - first:
+      213: -7507917103767606815
+    second: player_spritesheet_43
+  - first:
+      213: 323082171074644449
+    second: player_spritesheet_44
+  - first:
+      213: 1983128457062023489
+    second: player_spritesheet_45
+  - first:
+      213: -4054862470649933285
+    second: player_spritesheet_46
+  - first:
+      213: -1342267005534300677
+    second: player_spritesheet_47
+  - first:
+      213: -2648649234514477849
+    second: player_spritesheet_48
+  - first:
+      213: 2026041005768851752
+    second: player_spritesheet_49
+  - first:
+      213: -554208723834681561
+    second: player_spritesheet_50
+  - first:
+      213: 8398928781146836456
+    second: player_spritesheet_51
+  - first:
+      213: -273157966138353776
+    second: player_spritesheet_52
+  - first:
+      213: -3758310039859945572
+    second: player_spritesheet_53
+  - first:
+      213: -5191086503728012325
+    second: player_spritesheet_54
+  - first:
+      213: 1161897293344028330
+    second: player_spritesheet_55
+  - first:
+      213: 5411728357437179262
+    second: player_spritesheet_56
+  - first:
+      213: 2136798362653766579
+    second: player_spritesheet_57
+  - first:
+      213: -1594520674717032579
+    second: player_spritesheet_58
+  - first:
+      213: -1148576622218748114
+    second: player_spritesheet_59
+  - first:
+      213: -1525811703609457730
+    second: player_spritesheet_60
+  - first:
+      213: -4307363578819717164
+    second: player_spritesheet_61
+  - first:
+      213: 3821546551093192174
+    second: player_spritesheet_62
+  - first:
+      213: -8496586698258588473
+    second: player_spritesheet_63
+  - first:
+      213: -8092213191652814211
+    second: player_spritesheet_64
+  - first:
+      213: -6068278116840981187
+    second: player_spritesheet_65
+  - first:
+      213: -2935232411187375779
+    second: player_spritesheet_66
+  - first:
+      213: -7011802770307136031
+    second: player_spritesheet_67
+  - first:
+      213: -7680691831505983101
+    second: player_spritesheet_68
+  - first:
+      213: -4894849371990258468
+    second: player_spritesheet_69
+  - first:
+      213: 8508733482062009386
+    second: player_spritesheet_70
+  - first:
+      213: 3119624354287158596
+    second: player_spritesheet_71
+  - first:
+      213: 2275518929380003946
+    second: player_spritesheet_72
+  - first:
+      213: 8005499211735012843
+    second: player_spritesheet_73
+  - first:
+      213: 1333698593633391574
+    second: player_spritesheet_74
+  - first:
+      213: 3195398994919170561
+    second: player_spritesheet_75
+  - first:
+      213: 6807410341669276923
+    second: player_spritesheet_76
+  - first:
+      213: -1060566532504240264
+    second: player_spritesheet_77
+  - first:
+      213: -5712352919907195992
+    second: player_spritesheet_78
+  - first:
+      213: 464491701359915884
+    second: player_spritesheet_79
+  - first:
+      213: -8658136811268477494
+    second: player_spritesheet_80
+  - first:
+      213: 5225843810864176709
+    second: player_spritesheet_81
+  - first:
+      213: -7641170064541509864
+    second: player_spritesheet_82
+  - first:
+      213: -2897676181589407629
+    second: player_spritesheet_83
+  - first:
+      213: -2206498188960023142
+    second: player_spritesheet_84
+  - first:
+      213: 1335101312654655958
+    second: player_spritesheet_85
+  - first:
+      213: -8154624741984523117
+    second: player_spritesheet_86
+  - first:
+      213: 3480557189522243894
+    second: player_spritesheet_87
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +304,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +334,180 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idle1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1065
+        width: 195
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90085b7c7935b8810800000000000000
+      internalID: 1768599190028779529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: squat
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1062
+        width: 240
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030d83205e2c24400800000000000000
+      internalID: 307022013455192112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1065
+        width: 255
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e40cc1ea758a930800000000000000
+      internalID: 4154667061567573633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 585
+        width: 195
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca8212939d5c3370800000000000000
+      internalID: 8303614701356616397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: look_down
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 585
+        width: 195
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35375a141221cb00800000000000000
+      internalID: 846995674658977086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grapple
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 585
+        width: 210
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8396f75e0b84730800000000000000
+      internalID: 3983628370140805306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tongue
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 195
+        width: 135
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942c882455bc4b040800000000000000
+      internalID: 4662575081284223561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
