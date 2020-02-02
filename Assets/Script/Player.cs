@@ -33,7 +33,6 @@ public class Player : MonoBehaviour {
 	Vector2 directionalInput;
 	bool wallSliding;
 	int wallDirX;
-    LineRenderer lr;
 
     //TODO: grapply object
     public GameObject GrapplePrefab;
@@ -41,7 +40,6 @@ public class Player : MonoBehaviour {
 
 	void Start() {
 		controller = GetComponent<Controller2D> ();
-        lr = GetComponent<LineRenderer>();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;

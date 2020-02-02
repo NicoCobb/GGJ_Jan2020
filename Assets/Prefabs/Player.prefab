@@ -106,11 +106,13 @@ MonoBehaviour:
   wallJumpClimb: {x: 7.5, y: 16}
   wallJumpOff: {x: 8.5, y: 7}
   wallLeap: {x: 18, y: 17}
-  grappleShotSpeed: 0
+  grappleShotSpeed: 1
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
   gravity: 0
   velocity: {x: 0, y: 0, z: 0}
+  GrapplePrefab: {fileID: 1862746137426777447, guid: 15d39a67e385dc14fb95edadff735b8d,
+    type: 3}
 --- !u!114 &526449646788829288
 MonoBehaviour:
   m_ObjectHideFlags: 0
