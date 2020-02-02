@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 1768414204}
   - component: {fileID: 1768414205}
   m_Layer: 10
-  m_Name: Circle
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,7 +878,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8b0071993d92e45808131f4fd39d59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rectscale: 5
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  collider: {fileID: 0}
+  radius: 5
   movedirect: 0
 --- !u!114 &1768414205
 MonoBehaviour:
