@@ -44,6 +44,7 @@ public class Player : MonoBehaviour {
 	bool initSwing = true;
 
 	Vector2 currentGrappleDir;
+	Vector2 grappleLocation;
 
 	void Start() {
 		controller = GetComponent<Controller2D> ();
@@ -158,40 +159,47 @@ public class Player : MonoBehaviour {
 		velocity.y += gravity * Time.deltaTime;
 	}
 
-	public void setSwing(Vector2 grappleDir) {
+	public void setSwing(Vector2 grapplePosition) {
 		isSwinging = true;
 		initSwing = true;
-		currentGrappleDir = grappleDir;
+		grappleLocation = grapplePosition;
 	}
 	void HandleSwing() {
 		Vector2 playerDir;
-		playerDir.x = currentGrappleDir.y;
-		playerDir.y = currentGrappleDir.x;
-		playerDir.Normalize();
-		playerDir.x = playerDir.x * Mathf.Sign(velocity.x);
-		playerDir.y = playerDir.y * Mathf.Sign(velocity.y);
 
-		//the initial swing velocity takes no inputs and just resets the velocity direction
-		if(initSwing) {
-			//We want the initial swing velocity to be the same as current velocity, how do?
-			velocity = new Vector2(playerDir.x * Mathf.Abs(velocity.x), playerDir.y * Mathf.Abs(velocity.y));
-			initSwing = false;
-			return;
-		}
-		float grappleScalar = 2.0f;
+		currentGrappleDir = new Vector2(grappleLocation.x - transform.position.x, grappleLocation.y - transform.position.y);
+		currentGrappleDir.Normalize();
 
 		//find the direction we should be moving
+		playerDir.x = currentGrappleDir.y;
+		playerDir.y = -currentGrappleDir.x;
+		playerDir.Normalize();
+		// playerDir.x = playerDir.x * Mathf.Sign(velocity.x);
+		// playerDir.y = playerDir.y * Mathf.Sign(velocity.y);
 
-		//allow direction to influence trajectory
+		//the initial swing velocity takes no inputs and just resets the velocity direction
+		// if(initSwing) {
+		// 	//We want the initial swing velocity to be the same as current velocity, how do?
+		// 	velocity = new Vector2(playerDir.x * Mathf.Abs(velocity.x), playerDir.y * Mathf.Abs(velocity.y));
+		// 	initSwing = false;
+		// 	return;
+		// }
+		float grappleScalar = 2.0f;
+
+		//allow direction to influence speed
 		if(Mathf.Sign(directionalInput.x) == Mathf.Sign(playerDir.x)) {
-			grappleScalar*=1.5f;
+			grappleScalar*=2.0f;
 		} else {
 			grappleScalar*=0.5f;
 		}
 
-		//use dotProd to see how much gravity should influence swing
-		float grappleDotProd = Vector2.Dot(velocity, currentGrappleDir);
-		grappleScalar*= grappleDotProd*gravity;
+		//use cos/dotprod to see how much gravity should influence swing
+		float grappleDotProd = Vector2.Dot(new Vector2(1,0), currentGrappleDir);
+		// float grappleCos = grappleDotProd/(velocity.magnitude * playerDir.magnitude);
+		grappleScalar*= Mathf.Abs(grappleDotProd)*gravity*0.5f;
+
+		velocity = playerDir * grappleScalar;
+		print(currentGrappleDir);
 	}
 
     public void ShootGrapple(Vector2 mousePos) {
