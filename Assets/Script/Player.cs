@@ -149,13 +149,4 @@ public class Player : MonoBehaviour {
 		velocity.x = vec.x;
 		velocity.y = vec.y;
 	}
-
-    void OnTriggerEnter(Collider col) {
-        print("test");
-        print(col.ToString());
-        if (col.bounds.Intersects(controller.collider.bounds)) {
-            velocity.y *= -3;
-            velocity.x *= -3;
-        }
-    }
 }

@@ -5,15 +5,15 @@ using UnityEngine;
 public class Enemy : RaycastController
 {
     public int radius = 5;
-    public int movedirect = 0;
+    public LayerMask playerMask;
+    bool moveRight = false;
+    bool recentContact = false;
     CircleMoveable2D moveable;
-    CircleVelocity test;
 
     // Start is called before the first frame update
     void Start()
     {
         moveable = GetComponent<CircleMoveable2D>();
-        test = GetComponent<CircleVelocity>();
     }
 
     // Update is called once per frame
@@ -27,17 +27,17 @@ public class Enemy : RaycastController
         Vector2 right = new Vector2(.01f, 0);
         Vector2 left = new Vector2(-.01f, 0);
         Vector3 currentpos = transform.position;
-        if (movedirect == 0)
+        if (moveRight)
         {
             if (currentpos[0] >= 3.0f)
-                movedirect = 1;
+                moveRight = false;
             else
                 moveable.Move(right);
         }
-        else if (movedirect == 1)
+        else
         {
             if (currentpos[0] <= -3.0f)
-                movedirect = 0;
+                moveRight = true;
             else
                 moveable.Move(left);
         }
@@ -45,12 +45,18 @@ public class Enemy : RaycastController
 
     void HandleDeflect() {
         Vector2 rayOrigin = raycastOrigins.center;
-        Collider2D collider = Physics2D.OverlapCircle(rayOrigin, radius);
+        Collider2D collider = Physics2D.OverlapCircle(rayOrigin, radius, playerMask);
 
-        if (collider) {
-            Player player = GetComponentInParent<Player>();
+        if (collider && !recentContact) {
+            Player player = GetComponent<Player>();
+            print(player.velocity);
+            print(player.velocity);
             player.velocity.x *= -2;
             player.velocity.y *= -2;
+            recentContact = true;
+        }
+        if (recentContact && !collider) {
+            recentContact = false;
         }
 
     }
