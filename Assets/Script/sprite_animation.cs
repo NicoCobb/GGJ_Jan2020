@@ -5,9 +5,6 @@ using UnityEngine;
 public class sprite_animation : MonoBehaviour
 {
     // i dont understand sprite animation :(
-
-    public float walkSpeed = 1;
-    private bool _isGrounded = false;
     const int IDLE = 0;
     const int WALK = 1;
     const int JUMP = 2;
@@ -16,14 +13,16 @@ public class sprite_animation : MonoBehaviour
 
     Animator animator;
 
-    bool _isWalk = false;
-
-    string currDir = "right";
     int _currAniState = IDLE;
+
+    Player p;
+    Controller2D c;
 
     // Start is called before the first frame update
     void Start()
     {
+        p = GetComponentInParent<Player>();
+        c = GetComponentInParent<Controller2D>();
         animator = this.GetComponent<Animator>();
     }
 
@@ -34,10 +33,28 @@ public class sprite_animation : MonoBehaviour
         {
             changeState(GRAPPLE);
         }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            changeState(JUMP);
+        }
+        else if (p.directionalInput.x != 0)
+        {
+            changeState(WALK);
+        }
+
+        else if (c.collisions.below == true)
+        {
+            changeState(IDLE);
+        }
+        
         else if (Input.GetMouseButtonUp(0))
         {
             changeState(IDLE);
         }
+        
+        
+        
+        
         
     }
     void changeState(int state)
@@ -49,7 +66,12 @@ public class sprite_animation : MonoBehaviour
             case IDLE:
                 animator.SetInteger("state", IDLE);
                 break;
-
+            case (JUMP):
+                animator.SetInteger("state", JUMP);
+                break;
+            case WALK:
+                animator.SetInteger("state", WALK);
+                break;
             case GRAPPLE:
                 animator.SetInteger("state", GRAPPLE);
                 break;
