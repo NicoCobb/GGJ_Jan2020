@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
 	float velocityXSmoothing;
 	Controller2D controller;
 
-	Vector2 directionalInput;
+	public Vector2 directionalInput;
 	bool wallSliding;
 	int wallDirX;
 
