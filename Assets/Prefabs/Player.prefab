@@ -112,6 +112,7 @@ MonoBehaviour:
   wallStickTime: 0.25
   gravity: 0
   velocity: {x: 0, y: 0, z: 0}
+  directionalInput: {x: 0, y: 0}
   GrapplePrefab: {fileID: 1862746137426777447, guid: 15d39a67e385dc14fb95edadff735b8d,
     type: 3}
   isSwinging: 0
