@@ -13,7 +13,6 @@ public class PlayerInput : MonoBehaviour {
 
 	void Update () {
 		Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-		Vector2 mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 		player.SetDirectionalInput (directionalInput);
 
@@ -22,7 +21,10 @@ public class PlayerInput : MonoBehaviour {
 			return;
 		}
 
-		if(Input.)
+		if(Input.GetMouseButtonDown(0)) {
+			Vector2 mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			player.ShootGrapple(mousePos);
+		}
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
 		}
