@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 	public Vector2 wallJumpOff;
 	public Vector2 wallLeap;
 
+    public float grappleShotSpeed;
+
 	public float wallSlideSpeedMax = 3;
 	public float wallStickTime = .25f;
 	float timeToWallUnstick;
@@ -137,6 +139,11 @@ public class Player : MonoBehaviour {
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 	}
+
+    public void ShootGrapple(Vector2 mousePos) {
+        Vector2 toClickLocation = mousePos - (Vector2)transform.position;
+
+    }
 
 	public void SetVelocity(Vector2 vec) {
 		velocity.x = vec.x;
