@@ -128,6 +128,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 526449646788829291, guid: d56e12acfe4eb014cae166235d8a18ba,
+        type: 3}
+      propertyPath: GrapplePrefab
+      value: 
+      objectReference: {fileID: 1862746137426777447, guid: 15d39a67e385dc14fb95edadff735b8d,
+        type: 3}
     - target: {fileID: 526449646788829295, guid: d56e12acfe4eb014cae166235d8a18ba,
         type: 3}
       propertyPath: m_LocalPosition.x
