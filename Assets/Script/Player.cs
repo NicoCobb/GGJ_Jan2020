@@ -33,9 +33,15 @@ public class Player : MonoBehaviour {
 	Vector2 directionalInput;
 	bool wallSliding;
 	int wallDirX;
+    LineRenderer lr;
+
+    //TODO: grapply object
+    public GameObject GrapplePrefab;
+
 
 	void Start() {
 		controller = GetComponent<Controller2D> ();
+        lr = GetComponent<LineRenderer>();
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -141,8 +147,12 @@ public class Player : MonoBehaviour {
 	}
 
     public void ShootGrapple(Vector2 mousePos) {
-        Vector2 toClickLocation = mousePos - (Vector2)transform.position;
 
+        Vector2 toClickLocation = mousePos - (Vector2)transform.position;
+        toClickLocation.Normalize();
+
+        Instantiate(GrapplePrefab, transform.position, Quaternion.identity)
+        .GetComponent<GrapplingHook>().AimTongue(toClickLocation, this, grappleShotSpeed);
     }
 
 	public void SetVelocity(Vector2 vec) {
