@@ -52,7 +52,7 @@
 				fixed2 pos = i.uv;
 				pos.y += _Time.x * _Speed;
 				pos.y %= 1;
-				pos.x += _Time.x * _Speed / 3;
+				pos.x += _Time.x * _Speed / 3.745;
 				pos.x %= 1;
                 fixed4 col = tex2D(_MainTex, pos);
                 // apply fog
