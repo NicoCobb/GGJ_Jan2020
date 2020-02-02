@@ -11,6 +11,7 @@ public class PrintScript : MonoBehaviour
         print("Jakob Didio");
         print("Wilson Wong");
         print("Maya Tung");
+        print("Andrew Fang");
     }
 
     // Update is called once per frame
