@@ -12,6 +12,7 @@ public class sprite_animation : MonoBehaviour
     const int WALK = 1;
     const int JUMP = 2;
     const int LAND = 3;
+    const int GRAPPLE = 4;
 
     Animator animator;
 
@@ -29,16 +30,31 @@ public class sprite_animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(Input.GetKey("space") && _isGrounded)
+        if(Input.GetMouseButtonDown(0))
         {
-            changeState(JUMP);
-            _isGrounded = false;
+            changeState(GRAPPLE);
         }
-        else if (!_isGrounded && )
+        else if (Input.GetMouseButtonUp(0))
         {
+            changeState(IDLE);
+        }
+        
+    }
+    void changeState(int state)
+    {
+        if (_currAniState == state) return;
 
+        switch (state)
+        {
+            case IDLE:
+                animator.SetInteger("state", IDLE);
+                break;
+
+            case GRAPPLE:
+                animator.SetInteger("state", GRAPPLE);
+                break;
         }
-        */
+
+        _currAniState = state;
     }
 }

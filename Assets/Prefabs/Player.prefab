@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 526449646788829288}
   - component: {fileID: 526449646788829294}
   - component: {fileID: 1974688916}
+  - component: {fileID: 1510924850}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -114,6 +115,7 @@ MonoBehaviour:
   velocity: {x: 0, y: 0, z: 0}
   GrapplePrefab: {fileID: 1862746137426777447, guid: 15d39a67e385dc14fb95edadff735b8d,
     type: 3}
+  isSwinging: 0
 --- !u!114 &526449646788829288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +169,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1510924850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526449646788829300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e26be8b83a4c24fb62ff902731f9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
 --- !u!1 &526449647530342058
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +336,8 @@ GameObject:
   - component: {fileID: 526449648113015770}
   - component: {fileID: 526449648113015769}
   - component: {fileID: 746584361}
+  - component: {fileID: 5335803603068703225}
+  - component: {fileID: 787716240}
   m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
@@ -412,3 +429,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5335803603068703225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526449648113015771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e26be8b83a4c24fb62ff902731f9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
+--- !u!114 &787716240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526449648113015771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e26be8b83a4c24fb62ff902731f9eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 1
