@@ -25,6 +25,9 @@ public class PlayerInput : MonoBehaviour {
 			Vector2 mousePos = UnityEngine.Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			player.ShootGrapple(mousePos);
 		}
+		if(Input.GetMouseButtonUp(0)) {
+			player.EndGrapple();
+		}
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
 		}

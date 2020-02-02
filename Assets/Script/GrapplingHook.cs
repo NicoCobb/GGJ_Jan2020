@@ -33,8 +33,9 @@ public class GrapplingHook : MonoBehaviour
         //absolute value of the difference between start position and where the player clicked
         //note: we don't actually use this probably oops
         mouseClickDiff = new Vector2(Mathf.Abs(mouseClickLoc.x - p.transform.position.x), Mathf.Abs(mouseClickLoc.y - p.transform.position.y));
-
+        p.setSwing(toClickLocation);
     }
+
     // Update is called once per frame
     void Update()
     {

@@ -37,6 +37,13 @@ public class Player : MonoBehaviour {
     //TODO: grapply object
     public GameObject GrapplePrefab;
 
+	GameObject grappleInstance;
+
+	[HideInInspector]
+	public bool isSwinging = false;
+	bool initSwing = true;
+
+	Vector2 currentGrappleDir;
 
 	void Start() {
 		controller = GetComponent<Controller2D> ();
@@ -47,10 +54,17 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
-		CalculateVelocity();
+		if(isSwinging) {
+			HandleSwing();
+			controller.Move (velocity * Time.deltaTime);
+		} else {
+			CalculateVelocity();
+			controller.Move (velocity * Time.deltaTime, directionalInput);
+		}
+		// CalculateVelocity();
         HandleWallClip();
+		// HandleSwing();
 
-		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
@@ -144,10 +158,52 @@ public class Player : MonoBehaviour {
 		velocity.y += gravity * Time.deltaTime;
 	}
 
+	public void setSwing(Vector2 grappleDir) {
+		isSwinging = true;
+		initSwing = true;
+		currentGrappleDir = grappleDir;
+	}
+	void HandleSwing() {
+		Vector2 playerDir;
+		playerDir.x = currentGrappleDir.y;
+		playerDir.y = currentGrappleDir.x;
+		playerDir.Normalize();
+		playerDir.x = playerDir.x * Mathf.Sign(velocity.x);
+		playerDir.y = playerDir.y * Mathf.Sign(velocity.y);
+
+		//the initial swing velocity takes no inputs and just resets the velocity direction
+		if(initSwing) {
+			//We want the initial swing velocity to be the same as current velocity, how do?
+			velocity = new Vector2(playerDir.x * Mathf.Abs(velocity.x), playerDir.y * Mathf.Abs(velocity.y));
+			initSwing = false;
+			return;
+		}
+		float grappleScalar = 2.0f;
+
+		//find the direction we should be moving
+
+		//allow direction to influence trajectory
+		if(Mathf.Sign(directionalInput.x) == Mathf.Sign(playerDir.x)) {
+			grappleScalar*=1.5f;
+		} else {
+			grappleScalar*=0.5f;
+		}
+
+		//use dotProd to see how much gravity should influence swing
+		float grappleDotProd = Vector2.Dot(velocity, currentGrappleDir);
+		grappleScalar*= grappleDotProd*gravity;
+	}
+
     public void ShootGrapple(Vector2 mousePos) {
-        Instantiate(GrapplePrefab, transform.position, Quaternion.identity)
-        .GetComponent<GrapplingHook>().AimTongue(mousePos, this, grappleShotSpeed);
+        grappleInstance = (GameObject) Instantiate(GrapplePrefab, transform.position, Quaternion.identity);
+        grappleInstance.GetComponent<GrapplingHook>().AimTongue(mousePos, this, grappleShotSpeed);
     }
+	
+	public void EndGrapple() {
+		Destroy(grappleInstance);
+		isSwinging = false;
+		initSwing = true;
+	}
 
 	public void SetVelocity(Vector2 vec) {
 		velocity.x = vec.x;
